@@ -1,5 +1,6 @@
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,Text,StyleSheet, Button} from 'react-native';
+import SearchBar from '../components/SearchBar';
 
 const HomeScreen = props => {
     return(
@@ -7,6 +8,11 @@ const HomeScreen = props => {
             <Text>
                 HomeScreen
             </Text>
+            <Button
+            title='go to Globe'
+            onPress={() => 
+            props.navigation.navigate('Globe')}
+            />
         </View>
     )
 }

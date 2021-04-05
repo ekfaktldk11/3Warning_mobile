@@ -1,28 +1,57 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainStack from './navGroups/MainStack';
-import MarkStack from './navGroups/MarkStack';
+import { createStackNavigator } from '@react-navigation/stack';
+import MainTab from './navGroups/MainTab';
+import GlobeScreen from '../screens/GlobeScreen';
+import CategoryScreen from '../screens/CategoryScreen';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const SysNavigator = () => {
     return (
         <NavigationContainer>
-            <Tab.Navigator
+            <Stack.Navigator
             initialRouteName='Main'
             >
-                <Tab.Screen
+                <Stack.Screen
                     name='Main'
-                    component={MainStack}
+                    component={MainTab}
                 />
-                <Tab.Screen
-                    name='Mark'
-                    component={MarkStack}
+                <Stack.Screen
+                    name='Globe'
+                    component={GlobeScreen}
                 />
-            </Tab.Navigator>
+                <Stack.Screen
+                    name='Info'
+                    component={CategoryScreen}
+                />
+            </Stack.Navigator>
         </NavigationContainer>
     )
 }
 
 export default SysNavigator;
+
+// const Tab = createBottomTabNavigator();
+
+// const SysNavigator = () => {
+//     return (
+//         <NavigationContainer>
+//             <Tab.Navigator
+//             initialRouteName='Main'
+            
+//             >
+//                 <Tab.Screen
+//                     name='Main'
+//                     component={MainStack}
+//                 />
+//                 <Tab.Screen
+//                     name='Mark'
+//                     component={MarkStack}
+//                 />
+//             </Tab.Navigator>
+//         </NavigationContainer>
+//     )
+// }
+
+// export default SysNavigator;

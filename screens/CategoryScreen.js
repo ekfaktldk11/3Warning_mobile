@@ -1,12 +1,40 @@
-import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import CovidScreen from './CovidScreen';
+import EntryScreen from './EntryScreen';
+import SafeInfoScreen from './SafeInfoScreen';
+import CategoryListScreen from './CategoryListScreen';
 
 const CategoryScreen = props => {
-    return(
+    const [screenNum, setScreenNum] = useState(0);
+
+    const screenConvertHandler = num => {
+        setScreenNum(num)
+    }
+
+    let content;
+
+    switch (screenNum) {
+        // case 0:
+        //     content = <CategoryListScreen screenConvert={screenConvertHandler} />
+        //     break
+        case 1:
+            content = <CovidScreen screenConvert={screenConvertHandler} />
+            break
+        case 2:
+            content = <EntryScreen screenConvert={screenConvertHandler} />
+            break
+        case 3:
+            content = <SafeInfoScreen screenConvert={screenConvertHandler} />
+            break
+        default:
+            content = <CategoryListScreen screenConvert={screenConvertHandler} />
+            break
+    }
+
+    return (
         <View>
-            <Text>
-                CategoryScreen
-            </Text>
+            {content}
         </View>
     )
 }

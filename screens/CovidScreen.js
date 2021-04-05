@@ -1,12 +1,13 @@
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 const CovidScreen = props => {
-    return(
+    return (
         <View>
             <Text>
                 CovidScreen
             </Text>
+            <Button title='Back' onPress={() => props.screenConvert(0)} />
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
+import {View,Text,StyleSheet, Button} from 'react-native';
 
 const GlobeScreen = props => {
     return(
@@ -7,6 +7,11 @@ const GlobeScreen = props => {
             <Text>
                 GlobeScreen
             </Text>
+            <Button
+            title='go to Info'
+            onPress={() => 
+            props.navigation.navigate('Info')}
+            />
         </View>
     )
 }
